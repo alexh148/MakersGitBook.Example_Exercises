@@ -7,15 +7,19 @@ test_tweets = [
 
 banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
-test_tweets = test_tweets.map { |tweet| tweet.gsub(/sucks/, "CENSORED")}
-test_tweets = test_tweets.map { |tweet| tweet.gsub(/bad/, "CENSORED")}
-test_tweets = test_tweets.map { |tweet| tweet.gsub(/hate/, "CENSORED")}
-test_tweets = test_tweets.map { |tweet| tweet.gsub(/foolish/, "CENSORED")}
-test_tweets = test_tweets.map { |tweet| tweet.gsub(/danger to society/, "CENSORED")}
+# test_tweets = test_tweets.map { |tweet| tweet.gsub(/sucks/, "CENSORED")}
+# test_tweets = test_tweets.map { |tweet| tweet.gsub(/bad/, "CENSORED")}
+# test_tweets = test_tweets.map { |tweet| tweet.gsub(/hate/, "CENSORED")}
+# test_tweets = test_tweets.map { |tweet| tweet.gsub(/foolish/, "CENSORED")}
+# test_tweets = test_tweets.map { |tweet| tweet.gsub(/danger to society/, "CENSORED")}
 
-new_tweets = test_tweets.each do |twt|
-  twt.split(" ")
+# new_tweets = test_tweets.each do |twt|
+#   twt.split(" ")
+# end
+new_tweets = []
+
+test_tweets.each do |tweet|
+  tweet.split("sucks").join("CENSORED")
+  new_tweets.push(tweet)
 end
-
-puts test_tweets
 puts new_tweets
